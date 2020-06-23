@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+char c;
+char s[40];
+char str[60]; 
+
+scanf("%c",&c);
+scanf("%s",s);
+scanf("\n");
+scanf ("%[^\n]%*c", str); 
+
+printf("%c",c);
+printf("\n");
+printf("%s",s);
+printf("\n");
+printf("%s", str);
+    return 0;
+}

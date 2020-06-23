@@ -1,0 +1,10 @@
+from __future__ import division
+
+
+a = int(raw_input())
+b = int(raw_input())
+d=int(a/b)
+print(d)
+c=float(a/b)
+print(c)
+    

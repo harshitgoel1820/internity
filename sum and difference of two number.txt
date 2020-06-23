@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+	int a,b,c,z;
+    float d,e,f,y;
+
+scanf("%d %d",&a,&b);
+scanf("%f %f",&d,&e);
+c=a+b;
+z=a-b;
+f=(float)(d+e);
+y=(float)(d-e);
+
+    printf("%d %d",c,z);
+    printf("\n");
+    printf("%.1f %.1f",f,y);
+    return 0;
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+	
+    int a,b,c,d=0;
+    scanf("%d", &a);
+    for(b=a;b>0;b=b/10)
+    {
+        c=b%10;
+        d=d+c;
+    }
+    printf("%d",d);
+    return 0;
+}
