@@ -1,0 +1,69 @@
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+const int MAXN = 2000 * 50;
+
+set <string> hashset;
+string vlist [MAXN + 1];
+int height [MAXN + 1];
+int length [MAXN + 1];
+
+int main(){
+
+    int n, l;
+    char line [2010];
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++){
+
+        scanf("%s",line);
+        l = strlen(line);
+
+        for(char *p = line; p < line+l; p++){
+            hashset.insert(p);
+        }
+    }
+
+    set<string>::iterator itr;
+    int ct = 0;
+
+    for(itr = hashset.begin(); itr != hashset.end(); itr++){
+        vlist[ct] = *itr;
+        length[ct++] = itr->length();
+    }
+
+    for(int i = 1; i < ct; i++){
+
+        int lght = length[i] < length[i-1]? length[i]:length[i-1];
+        height[i] = lght;
+
+        for(int l = 0; l < lght; l++){
+            if (vlist[i-1][l] != vlist[i][l]){
+                height[i] = l;
+                break;
+            }
+        }
+    }
+
+    int q, r;
+    scanf("%d", &q);
+
+    while(q--){
+
+        scanf("%d", &r);
+        int index = 0;
+
+        while(r>length[index]-height[index] && index < ct){
+            r = r-(length[index]-height[index]);
+            index++;
+        }
+
+        if (index < ct){
+            puts(vlist[index].substr(0,r+height[index]).c_str());
+
+        } else puts("INVALID");
+    }
+    return 0;
+}
